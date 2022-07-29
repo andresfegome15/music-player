@@ -11,7 +11,6 @@ class Email {
     this.to = to;
   }
 
-  // Connect to mail service
   newTransport() {
     return nodemailer.createTransport({
       host: "smtp.mailtrap.io",

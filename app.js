@@ -23,14 +23,11 @@ const { artistRouter } = require("./router/artist.router");
 const { homeRouter } = require("./router/home.router");
 const { songRouter } = require("./router/song.router");
 
-// Set template engine
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
-// Serving static files
 app.use(express.static(path.join(__dirname, "public")));
 
-// Limit the number of requests that can be accepted to our server
 const limiter = rateLimit({
   max: 10000,
   windowMs: 60 * 60 * 1000, // 1 hr
@@ -39,13 +36,10 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-// Add security headers
 app.use(helmet());
 
-// Compress responses
 app.use(compression());
 
-// Log incoming requests
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 else app.use(morgan("combined"));
 

@@ -13,16 +13,6 @@ const renderIndex = catchAsync(async (req, res, next) => {
     title: "Rendered with Pug",
     albums,
   });
-
-  //   res.status(200).render("index", {
-  //     title: "Rendered with Pug",
-  //     albums,
-  //   });
-
-  // Serve static html
-  // const indexPath = path.join(__dirname, '..', 'public', 'index.html');
-
-  // res.status(200).sendFile(indexPath);
 });
 
 module.exports = { renderIndex };
