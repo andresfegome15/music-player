@@ -1,8 +1,10 @@
 {
   "name": "music-player",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^14.x"
+  },
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js"
@@ -31,5 +33,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresfegome15/music-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andresfegome15/music-player/issues"
+  },
+  "homepage": "https://github.com/andresfegome15/music-player#readme",
+  "description": ""
 }

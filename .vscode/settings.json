@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/edcb6c9f-1da3-4a2b-a74c-71845b0c01ce/microsoft.web/sites/subscriptions/edcb6c9f-1da3-4a2b-a74c-71845b0c01ce/resourceGroups/rg-player-music/providers/Microsoft.Web/sites/player-music",
-    "appService.deploySubpath": "."
-}
