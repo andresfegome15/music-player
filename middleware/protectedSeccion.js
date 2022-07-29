@@ -25,7 +25,6 @@ const seccionProteted = catchAsync(async (req, res, next) => {
   const user = await User.findOne({
     where: { id: decode.id, status: "active" },
   });
-  console.log(user);
 
   if (!user) {
     return next(new GlobalError("user is not enabled", 404));
