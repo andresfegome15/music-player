@@ -2,12 +2,12 @@ const { Artist } = require("../models/artist.model");
 const { Album } = require("../models/albums.models");
 
 //utils
-const { GlobalError } = require("../utils/ErrorGlobal.utils");
-const { catchAsync } = require("../utils/catchAsync.utils");
 const {
   uploadImageAlbum,
   uploadImageArtist,
 } = require("../utils/azureStorage");
+const { GlobalError } = require("../utils/ErrorGlobal.utils");
+const { catchAsync } = require("../utils/catchAsync.utils");
 
 const getArtist = catchAsync(async (req, res, next) => {
   const artist = await Artist.findAll({
