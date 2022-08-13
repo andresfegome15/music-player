@@ -22,6 +22,7 @@ const { userRouter } = require("./router/user.router");
 const { artistRouter } = require("./router/artist.router");
 const { homeRouter } = require("./router/home.router");
 const { songRouter } = require("./router/song.router");
+const { contactoRouter } = require("./router/contacto.router");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -48,6 +49,7 @@ app.use("/", homeRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/artist", artistRouter);
 app.use("/api/v1/songs", songRouter);
+app.use("/api/v1/contactos", contactoRouter);
 
 //endponit no found
 app.all("*", (req, res, next) => {

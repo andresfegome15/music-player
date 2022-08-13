@@ -27,7 +27,7 @@ const {
 userRouter.post("/", createUserValidator, createUser);
 userRouter.post("/login", login);
 
-userRouter.use(seccionProteted);
+// userRouter.use(seccionProteted);
 userRouter.get("/", getUser);
 userRouter
   .use("/:id", compareUser, userExist)

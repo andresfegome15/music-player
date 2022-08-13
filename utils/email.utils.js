@@ -12,6 +12,15 @@ class Email {
   }
 
   newTransport() {
+    if (process.env.NODE_ENV === "development") {
+      return nodemailer.createTransport({
+        service: "SendGrid",
+        auth: {
+          user: "apikey",
+          pass: process.env.SENGRID_API_KEY,
+        },
+      });
+    }
     return nodemailer.createTransport({
       host: "smtp.mailtrap.io",
       port: 2525,
@@ -38,7 +47,7 @@ class Email {
   }
 
   async sendWelcome(name) {
-    await this.send("welcome", "Welcome to our app", { name });
+    await this.send("welcome", "Full satck developer junior", { name });
   }
 }
 

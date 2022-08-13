@@ -2,6 +2,7 @@ const { User } = require("../models/user.models");
 const bcrypt = require("bcryptjs");
 const JWT = require("jsonwebtoken");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config({ path: "./config.env" });
 
@@ -22,7 +23,6 @@ const createUser = catchAsync(async (req, res, next) => {
 
   const user = await User.create({ name, email, password: incryPassword });
   user.password = undefined;
-
   await new Email(email).sendWelcome(name);
   res.status(201).json({ user });
 });
